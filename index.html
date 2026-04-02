@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Contact Page</title>
+  <style>
+    /* Using standard fonts instead of Google Fonts */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: lightblue;
+      padding-top: 50px;
+    }
+
+    /* Using fixed width and margin auto to center the box */
+    .container {
+      background-color: white;
+      width: 450px;
+      margin: 0 auto;
+      padding: 30px;
+      border: 2px solid black;
+      border-radius: 10px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    /* Simple label styling */
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    /* Making inputs full width and adding basic padding */
+    input, select, textarea {
+      width: 95%;
+      padding: 8px;
+      border: 1px solid gray;
+      border-radius: 4px;
+    }
+
+    /* Beginner way to do a message box */
+    textarea {
+      height: 100px;
+    }
+
+    /* Styling the button with basic colors */
+    .my-button {
+      background-color: blue;
+      color: white;
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .my-button:hover {
+      background-color: darkblue;
+    }
+
+    /* Simple ID for the success message */
+    #thanks {
+      color: green;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 15px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>Please fill this out to talk to us.</p>
+
+    <form id="myContactForm">
+      
+      <label>First Name:</label>
+      <input type="text" placeholder="Enter first name" required>
+
+      <label>Last Name:</label>
+      <input type="text" placeholder="Enter last name" required>
+
+      <label>Email:</label>
+      <input type="email" placeholder="Email here" required>
+
+      <label>Phone:</label>
+      <input type="text" placeholder="Phone number">
+
+      <label>Subject:</label>
+      <select>
+        <option>General</option>
+        <option>Support</option>
+        <option>Billing</option>
+      </select>
+
+      <label>Message:</label>
+      <textarea placeholder="Write something..."></textarea>
+
+      <br><br>
+      <input type="checkbox" style="width: auto;" required> I agree to terms.
+
+      <button type="submit" class="my-button">Submit Form</button>
+      
+      <p id="thanks">Success! We got your message.</p>
+    </form>
+  </div>
+
+  <script>
+    // Simple script to show the text
+    const form = document.getElementById('myContactForm');
+    form.onsubmit = function(event) {
+      event.preventDefault();
+      document.getElementById('thanks').style.display = 'block';
+      alert("Form submitted!");
+    }
+  </script>
+
+</body>
+</html>
